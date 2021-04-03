@@ -7,8 +7,8 @@ from differential_drive_arduino.msg import motors_speed
 #                        left motor sub node 
 global left_motor_vel
 
-def lmotor_callback(data1):
-    left_motor_vel= data1.data
+def lmotor_callback(lm):
+    left_motor_vel= lm.data
 
     
 def lm_listener():
@@ -16,16 +16,16 @@ def lm_listener():
     rospy.init_node('lm_listener', anonymous=False)
 
     rospy.Subscriber("lwheel_vtarget", Float32, lmotor_callback)
-
+    
     # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+    
 ###################################################################################
 
 #                        right motor sub node 
 global right_motor_vel
 
-def rmotor_callback(data2):
-    right_motor_vel= data2.data
+def rmotor_callback(rm):
+    right_motor_vel= rm.data
 
     
 def rm_listener():
@@ -58,10 +58,9 @@ def motors_pub():
 
 
 if __name__ == '__main__':
-    try:
+    
         lm_listener()
         rm_listener()
         motors_pub()
         
-    except rospy.ROSInterruptException:
-        pass
+   
