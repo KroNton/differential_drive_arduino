@@ -7,10 +7,10 @@
 #include <std_msgs/Float32.h>
 
 #define IN1 7
-#define IN2 5
+#define IN2 8
 
-#define ENA 4
-#define ENB 6
+#define ENA 6
+#define ENB 3
 
 ros::NodeHandle  nh1;
 
