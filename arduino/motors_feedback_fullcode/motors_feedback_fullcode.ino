@@ -9,19 +9,19 @@
 
 ////////Motors pins ////////
 
-//left motor 
+
 #define IN1 7
 #define IN2 5
 
-//right motor
+
 #define ENA 4
 #define ENB 6
 
 ////////Encoders pins ////////
 
 //left encoder
-#define RH_ENCODER_A  18
-#define RH_ENCODER_B 19
+#define RH_ENCODER_A  20
+#define RH_ENCODER_B 16
 
 //right encoder
 #define LH_ENCODER_A 2
@@ -89,7 +89,7 @@ void setup()
   
 
   attachInterrupt(digitalPinToInterrupt(2), leftEncoderISR, CHANGE);   //attach interrupt fn
-  attachInterrupt(digitalPinToInterrupt(18), rightEncoderISR, CHANGE);// relates the interrupt no.
+  attachInterrupt(digitalPinToInterrupt(20), rightEncoderISR, CHANGE);// relates the interrupt no.
   // the ISR Function and the Interrupt Mode
 
   

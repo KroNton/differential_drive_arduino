@@ -1,0 +1,10 @@
+<launch>   
+    
+   <param name="robot_description" textfile="$(find k2wr_description)/urdf/k2wr_robot.xacro" />
+  <node pkg="rviz" type="rviz" name="rviz" output="screen"/>
+  <node pkg="differential_drive_arduino" type="diff_tf.py" name="diff_tf">
+     <!--rosparam param="rate">1</rosparam-->
+     <rosparam param="base_width">0.4</rosparam>
+  </node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> 
+</launch>
